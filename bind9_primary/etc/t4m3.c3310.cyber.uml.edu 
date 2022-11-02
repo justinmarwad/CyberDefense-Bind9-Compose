@@ -1,0 +1,18 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	t4m3.c3310.cyber.uml.edu. root.t4m3.c3310.cyber.uml.edu. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns1.t4m3.c3310.cyber.uml.edu.
+@	IN	NS	ns2.t4m3.c3310.cyber.uml.edu.
+@	IN	A	127.0.0.1
+@	IN	AAAA	::1
+
+ns1			A	192.168.0.76		; Change to desired NS1 IP
+ns2			A	192.168.0.126		; Change to desired NS2 IP

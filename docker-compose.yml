@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+
+  # BIND SERVER PRIMARY # 
+  bind9-primary:
+    restart: always
+    image: labbsr0x/dns-bind9
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./bind9_primary/bind9_data:/data 
+      - ./bind9_primary/etc:/data 
+
+
+  # BIND SERVER SECONDARY #  
+  # bind9-secondary:
+  #   restart: always
+  #   image: labbsr0x/dns-bind9
+  #   ports:
+  #     - "53:53/udp"
+  #     - "53:53/tcp"
+  #   volumes:
+  #     - ./bind9_data:/data 
